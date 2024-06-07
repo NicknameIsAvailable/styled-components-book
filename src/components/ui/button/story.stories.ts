@@ -1,19 +1,14 @@
 import { fn } from "@storybook/test";
-import Button from ".";
+import { Button } from "./ui";
 import { StoryObj } from "@storybook/react";
 
 const meta = { 
-    title: "Components/button",
+    title: "UI/button",
     component: Button,
     parameters: {
         layout: "centered",
     },
     tags: ["autodocs"],
-    argTypes: {
-        backgroundColor: {
-            control: "color"
-        }
-    },
     args: { onClick: fn() }
 }
 
@@ -24,22 +19,38 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
     args: {
         primary: true,
-        label: "Button",
         children: "Кнопка"
     },
 }
 
 export const Secondary: Story = {
     args: {
-        label: "Button",
-        children: "Кнопка"
+        children: "Кнопка",
+        primary: false
+    },
+}
+
+export const Small: Story = {
+    args: {
+        primary: true,
+        children: "Кнопка",
+        size: "small"
+    },
+}
+
+export const Medium: Story = {
+    args: {
+        primary: true,
+        children: "Кнопка",
+        size: "medium"
     },
 }
 
 export const Large: Story = {
     args: {
         primary: true,
-        label: "Button",
-        children: "Кнопка"
+        children: "Кнопка",
+        size: "large"
     },
 }
+
